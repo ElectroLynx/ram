@@ -20,7 +20,7 @@ export default function Home() {
           />
           <span className="absolute right-3 text-gray-400">€</span>
         </div>
-        <p className="text-white"> Vous pouvez avoir { (montant / prixRAM).toFixed(2) } GB de RAM</p>
+        <p className="text-white"> Vous pouvez avoir { (parseFloat(montant) / parseFloat(prixRAM)).toFixed(2) } GB de RAM</p>
       </main>
       <footer className="flex flex-col justify-between items-center border-t border-slate-800 p-4">
         <p className="text-white">Calculateur de RAM. Créé par ElectroLynx.</p>
