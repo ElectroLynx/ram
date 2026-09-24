@@ -8,7 +8,7 @@ export default function Home() {
   const [prixRAM, setPrixRAM] = useState<string>("11.12");
 
   return (
-    <div className="flex items-center justify-center">
+    <div>
       <main className="flex flex-col items-center justify-center min-h-screen gap-6">
         <h1 className="text-3xl font-bold text-white">Calculateur de RAM</h1>
 
@@ -22,6 +22,12 @@ export default function Home() {
         </div>
         <p className="text-white"> Vous pouvez avoir { (montant / prixRAM).toFixed(2) } GB de RAM</p>
       </main>
+      <footer className="flex flex-col justify-between items-center border-t border-slate-800 p-4">
+        <p className="text-white">Calculateur de RAM. Créé par ElectroLynx.</p>
+        <a href="https://github.com/ElectroLynx/ram" target="_blank" rel="noopener noreferrer">
+          <p className="text-white hover:underline hover:text-blue-400">Repo sur GitHub</p>
+        </a>
+      </footer>
     </div>
   );
 }
