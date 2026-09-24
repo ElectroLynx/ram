@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RAM
 
-## Getting Started
+Calculateur de RAM simple et fonctionnel, développé avec Next.js.
 
-First, run the development server:
+## Présentation
+
+Cette application permet de calculer le nombre de gigaoctets de RAM qu'un utilisateur peut obtenir en fonction d'un montant donné et d'un prix unitaire de la RAM.
+
+Le calcul actuel est basé sur un prix fixe de 11,12 € par Go :
+
+- montant saisi par l'utilisateur
+- division par le prix de référence
+- affichage du résultat en Go
+
+## Fonctionnement
+
+L'application contient une seule page principale dans [app/page.tsx](app/page.tsx) :
+
+- un champ de saisie pour entrer un montant en euros
+- un prix de référence affiché dans le code
+- un calcul automatique du nombre de Go de RAM obtenus
+
+Exemple :
+
+- montant saisi : 50 €
+- prix RAM : 11,12 € / Go
+- résultat : environ 4,49 Go
+
+## Stack technique
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+
+## Prérequis
+
+Avant de lancer le projet, assurez-vous d'avoir installé :
+
+- Node.js 20+
+- npm
+
+## Installation
+
+```bash
+npm install
+```
+
+## Démarrage
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ensuite, ouvrez votre navigateur à l'adresse suivante :
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts disponibles
 
-## Learn More
+```bash
+npm run dev     # démarre le serveur de développement
+npm run build   # construit l'application pour la production
+npm run start   # lance le projet compilé
+npm run lint    # vérifie le code avec ESLint
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Structure du projet
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+.
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── public/
+├── eslint.config.mjs
+├── next.config.ts
+├── package.json
+├── postcss.config.mjs
+├── tsconfig.json
+├── README.md
+├── next-env.d.ts
+└── .gitignore
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Fichiers clés
 
-## Deploy on Vercel
+- [app/page.tsx](app/page.tsx) : logique principale de l'application et calcul du prix
+- [app/layout.tsx](app/layout.tsx) : mise en page racine et métadonnées du site
+- [app/globals.css](app/globals.css) : styles globaux et thème
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Personnalisation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pour modifier le prix de référence de la RAM, il faut ajuster la valeur dans [app/page.tsx](app/page.tsx) :
+
+```ts
+const [prixRAM, setPrixRAM] = useState<string>("11.12");
+```
+
+Vous pouvez aussi modifier le texte d'interface, les classes CSS, ou la mise en page selon les besoins du projet.
+
+## Déploiement
+
+Le projet peut être déployé facilement sur Vercel ou sur tout environnement compatible avec Node.js et Next.js.
+
+## Licence
+
+Aucune licence spécifique n'a été ajoutée pour le moment. Si vous souhaitez publier ce projet, il est recommandé d'ajouter une licence adaptée à votre usage.
+
+## L'IA dans le Projet
+L'IA m'a aidé à écrire uniquement ce README.md
