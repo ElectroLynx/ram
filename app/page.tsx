@@ -8,7 +8,7 @@ export default function Home() {
   const [prixRAM, setPrixRAM] = useState<string>("11.12");
 
   return (
-    <div>
+    <div className="bg-black">
       <main className="flex flex-col items-center justify-center min-h-screen gap-6">
         <h1 className="text-3xl font-bold">Calculateur de RAM</h1>
 
